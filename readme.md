@@ -1,16 +1,15 @@
 <h1>
-Aplicando el media queri a una pagina para hacerla responsiva en diferentes formatos o pantallas
+Aplicando media queries a una pagina para hacerla responsiva en diferentes formatos o pantallas
  </h1>
 <hr>
 
-desarrollo
-se configura una Grilla con dos columnas y tres filas para agregar los contenidos, ya que enia un tema libre 
-realice el trabajo con dibujos animados de los 90.
+<strong>Desarrollo</strong>
+se configura una Grilla con dos columnas y tres filas para agregar los contenidos, y ya que tenia un tema libre 
+se realizo el trabajo con dibujos animados de los 90.
 <hr>
-Al achicar la pagina se puede apreciar como los elementos se ajustan para hacer visible la pagina 
-en cualquier formato.
+A medida que se reduce el tamaño de la pantalla, se observa cómo los elementos se adaptan dinámicamente, asegurando la visualización óptima del contenido en diversos formatos de dispositivo.
 
-para hacerlo mas entretenido, aplique en el boton de cada carta un enlace que te lleva al opening de cada caricatura
+para hacerlo mas entretenido aplique en el boton de cada carta un enlace que te lleva al opening de cada caricatura.
 
 
 
@@ -19,5 +18,5 @@ HTML
 CSS
 Grid
 Flexbox
-@mediaqueri
+@mediaqueries
 youtube
