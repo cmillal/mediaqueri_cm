@@ -137,3 +137,107 @@ header {
   .card-button:hover {
     background-color: #1d3557;
   }
+
+  /* media queri */
+/*
+  @media screen and (min-width: 575px) {
+    .grid-container {
+      grid-template-areas:
+        'header'
+        'sidebar'
+        'main'
+        'footer';
+      grid-template-columns: 1fr; /* Una sola columna que ocupa todo el ancho 
+      gap: 10px;
+      height: auto;
+    }
+  }
+
+      @media screen and (min-width: 768px) {
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            'header header'
+            'sidebar main'
+            'footer footer';
+          grid-template-columns: 200px 1fr; /* 200px para sidebar y 1fr para main 
+          gap: 10px;
+          height: 100vh;
+        }
+      }
+
+      @media screen and (max-width: 992px) {
+        .grid-container {
+          display: grid;
+          grid-template-areas:
+            'header header header'
+            'sidebar main main'
+            'footer footer footer';
+          grid-template-columns: 150px 1fr 1fr; /* Ajusta los anchos según necesites 
+          gap: 10px;
+          height: 100vh;
+        }
+      }
+      */
+      
+      /* Estilos por defecto (para pantallas muy pequeñas) */
+
+      /* Estilos por defecto (para pantallas muy pequeñas) */
+.grid-container {
+    display: grid;
+    grid-template-areas:
+      'header'
+      'sidebar'
+      'main'
+      'footer';
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: auto;
+  }
+  
+  .main {
+    display: grid;
+    grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+    gap: 10px;
+  }
+  
+  .main .card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Estilos para pantallas de 576px o más */
+  @media screen and (min-width: 576px) {
+    .grid-container {
+      grid-template-areas:
+        'header header'
+        'sidebar main'
+        'footer footer';
+      grid-template-columns: 200px 1fr;
+      height: 100vh;
+    }
+  
+    .main {
+      grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas medianas */
+    }
+  }
+  
+  /* Estilos para pantallas de 992px o más */
+  @media screen and (min-width: 992px) {
+    .grid-container {
+      grid-template-areas:
+        'header header header header'
+        'sidebar main main main'
+        'footer footer footer footer';
+      grid-template-columns: 200px 1fr 1fr;
+    }
+  
+    .main {
+      grid-template-columns: 1fr 1fr 1fr 1fr; /* Tres columnas en pantallas grandes */
+    }
+  }
