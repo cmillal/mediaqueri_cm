@@ -26,11 +26,13 @@ footer {
 }
 
 header {
+    display: flex;
+    justify-content:space-around;
     background-image: url('./img/nick-fondo-header.jpg');
     background-size: cover; 
     background-repeat: no-repeat;
     background-attachment: fixed;
-
+    gap: 200px;
 }
 
 .header h1 {
@@ -38,6 +40,32 @@ header {
     color: #b97f0c;
     padding: 10px;
     border-radius: 20%;
+}
+
+.form-select {
+    /* Tamaño y márgenes */
+    width: 190px; /* Ajusta el ancho según sea necesario */
+    padding: 5px 10px; /* Ajusta el padding para el espaciado interno */
+    margin: 5px 0; /* Ajusta los márgenes según sea necesario */
+
+    /* Fuente */
+    font-size: 14px; /* Ajusta el tamaño de la fuente */
+    font-family: sans-serif; /* Ajusta la fuente */
+
+    /* Bordes y colores */
+    border: 1px solid #cd6b10; /* Ajusta el borde */
+    border-radius: 6px; /* Ajusta el radio del borde para hacerlo redondeado */
+    background-color: #dcc1a9; /* Ajusta el color de fondo */
+    color: #333; /* Ajusta el color del texto */
+
+    /* Estilos al hacer foco */
+    outline: none; /* Elimina el borde de foco predeterminado */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Agrega una sombra sutil al hacer foco */
+}
+
+/* Estilos para las opciones */
+.form-select option {
+    padding: 8px 12px;
 }
 
 
@@ -59,6 +87,9 @@ header {
     padding: 20px;
     display: flex;
     justify-content: center;
+    flex-direction: row; /* Mostrar elementos en línea horizontal  esta linea la escribi para que el select quede abajo del header en pantallas pequeñas*/
+    align-items: center; /* Centrar elementos verticalmente */
+  
 }
 
 .sidebar {
@@ -164,18 +195,6 @@ header {
     background-color: #1d3557;
   }
 
- 
-.grid-container {
-    display: grid;
-    grid-template-areas:
-      'header'
-      'sidebar'
-      'main'
-      'footer';
-    grid-template-columns: 1fr;
-    gap: 10px;
-    height: auto;
-  }
   
   .main {
     display: grid;
@@ -192,34 +211,99 @@ header {
     width: 100%;
     height: auto;
   }
-  
-  /* Estilos para pantallas de 576px o más */
-  @media screen and (min-width: 576px) {
+
+
+/* Media query para pantallas de 576px o menos */
+@media screen and (max-width: 576px) {
     .grid-container {
-      grid-template-areas:
-        'header header'
-        'sidebar main'
-        'footer footer';
-      grid-template-columns: 200px 1fr;
-      height: 100vh;
+        grid-template-areas:
+            'header header'
+            'sidebar sidebar'
+            'main main'
+            'footer footer';
+        grid-template-columns: 1fr;
+        height: 100vh;
     }
+
   
     .main {
-      grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas medianas */
+        grid-template-columns: 1fr;
     }
-  }
-  
-  /* Estilos para pantallas de 992px o más */
-  @media screen and (min-width: 992px) {
+
+    /* mostrar boton y ocultar lista */
+    .sidebar-list {
+        display: none;
+       
+    }
+
+    .sidebar-select {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header {
+        flex-direction: column; /* Mostrar elementos en línea horizontal  esta linea la escribi para que el select quede abajo del header en pantallas pequeñas*/
+        align-items: center; /* Centrar elementos verticalmente */
+        gap: 20px;
+    }
+    
+}
+
+
+@media screen and (min-width: 576px) {
     .grid-container {
-      grid-template-areas:
-        'header header header header'
-        'sidebar main main main'
-        'footer footer footer footer';
-      grid-template-columns: 200px 1fr 1fr;
+        grid-template-areas:
+            'header header'
+            'sidebar main'
+            'footer footer';
+        grid-template-columns: 200px 1fr;
+        height: 100vh;
+    
     }
+
   
     .main {
-      grid-template-columns: 1fr 1fr 1fr 1fr; /* Tres columnas en pantallas grandes */
+        grid-template-columns: 1fr 1fr;
     }
-  }
+
+    /* Mostrar la lista y ocultar el select */
+    .sidebar-list {
+        display: block;
+    }
+
+    .sidebar-select {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .header {
+        flex-direction: column; /* Mostrar elementos en línea horizontal  esta linea la escribi para que el select quede abajo del header en pantallas pequeñas*/
+        align-items: center; /* Centrar elementos verticalmente */
+        gap: 20px;
+    }
+}
+
+/* Media query para pantallas de 992px o más */
+@media screen and (min-width: 992px) {
+    .grid-container {
+        grid-template-areas:
+            'header header header header'
+            'sidebar main main main'
+            'footer footer footer footer';
+        grid-template-columns: 200px 1fr 1fr;
+    }
+
+    .main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .header {
+        flex-direction: row; /*  esta linea la escribi para que el select quede abajo del header en pantallas pequeñas */
+        align-items: center; 
+        gap: 200px;
+    }
+}
