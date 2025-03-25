@@ -106,6 +106,15 @@ header {
     gap: 10px;
 }
 
+.buttons {
+    grid-area: buttons;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 10px;
+}
+
 .footer {
     grid-area: footer;
     background-color: #f0f0f0;
@@ -220,6 +229,7 @@ header {
             'header header'
             'sidebar sidebar'
             'main main'
+            'buttons buttons'
             'footer footer';
         grid-template-columns: 1fr;
         height: 100vh;
@@ -256,6 +266,7 @@ header {
         grid-template-areas:
             'header header'
             'sidebar main'
+            'sidebar buttons'
             'footer footer';
         grid-template-columns: 200px 1fr;
         height: 100vh;
@@ -291,6 +302,7 @@ header {
         grid-template-areas:
             'header header header header'
             'sidebar main main main'
+            'sidebar buttons buttons buttons'
             'footer footer footer footer';
         grid-template-columns: 200px 1fr 1fr;
     }
@@ -307,3 +319,5 @@ header {
         gap: 200px;
     }
 }
+
+
